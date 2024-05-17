@@ -62,13 +62,13 @@ def format_phone_number(phone):
         return formatted_phone
     return phone
 
+
 def fix_phone_numbers(data):
     """Fix the phone numbers in the contact list"""
     for contact in data:  # Go through the list
         contact[5] = format_phone_number(contact[5])  # Replace the old phone number with the new one
     return data
 
-   
 
 def main():
     """Call all functions"""
