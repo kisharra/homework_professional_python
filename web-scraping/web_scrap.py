@@ -42,7 +42,7 @@ def get_data(url):
         description_page = bs4.BeautifulSoup(description_response.text, features='lxml')
         description = description_page.find('div', class_='vacancy-description').text
 
-        if 'Django' in description and 'Flask' in description:  # Check if Django or Flask in description then add all data to list with dictionary
+        if 'Django' in description and 'Flask' in description:  # Check if Django and Flask in description then add all data to list with dictionary
             data.append({
                 'Vacancy': title,
                 'Link': link,
