@@ -35,18 +35,25 @@ def unique_names(data):
     '''Find unique names'''
     unique_names_list = []  # Create an empty list
     unique_names = {}  # Create an empty dictionary
-    for names in data[1:]:  # Go through the list without the first line 
+
+    # Go through the list without the first line 
+    for names in data[1:]: 
         key = (names[0], names[1])  # Create a key with the first and second name
         if key not in unique_names:  
             unique_names[key] = names  # If the key is not in the dictionary, add elements to the dictionary
         else:
-           for i in range(2, len(names)):  # Go through the rest of the names
-              if names[i] != '':  # If the name is not empty
-                 unique_names[key][i] = names[i]  # Add the name to the dictionary
+            # Go through the rest of the names
+            for i in range(2, len(names)):  
+                # If the name is not empty
+                if names[i] != '':
+                    unique_names[key][i] = names[i]  # Add the name to the dictionary
+
     into_list = list(unique_names.values())  # Create a list with unique names
     into_list.insert(0, data[0])  # Add the first line
-    for item in into_list:  # Return all data into a list
-       unique_names_list.append(item)  # Add data to the list
+    
+    # Return all data into a list
+    for item in into_list:
+       unique_names_list.append(item) 
 
     return unique_names_list
 
